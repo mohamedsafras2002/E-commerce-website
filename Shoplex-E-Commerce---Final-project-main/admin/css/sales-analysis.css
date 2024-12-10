@@ -1,0 +1,62 @@
+  /* General Styling */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Content Styling */
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+}
+
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Card Styling */
+.card {
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.card h2 {
+    margin: 0 0 10px;
+    font-size: 1.2em;
+    color: #007bff;
+}
+
+.card p {
+    margin: 5px 0;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.progress-bar {
+    background-color: #f1f1f1;
+    border-radius: 20px;
+    height: 20px;
+    margin: 10px 0;
+    overflow: hidden;
+}
+
+.progress-bar-inner {
+    background-color: #4CAF50;
+    height: 100%;
+    transition: width 0.5s ease-in-out;
+}

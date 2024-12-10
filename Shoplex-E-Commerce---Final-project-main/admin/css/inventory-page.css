@@ -1,0 +1,353 @@
+/* Main content styles */
+:root {
+    --inv-primary-color: #3498db;
+    --inv-secondary-color: #2ecc71;
+    --inv-background-color: #f4f6f8;
+    --inv-text-color: #333;
+    --inv-border-color: #ddd;
+}
+
+
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #fff;
+}
+
+/* Header styles */
+.header {
+    background-color: #ffffff;
+    color: white;
+    padding: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    font-size: 24px;
+    color: black;
+}
+
+/* Inventory table styles */
+.inventory-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    margin-top: 20px;
+}
+
+.inventory-table .action-buttons {
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+    color: #3498db;
+    margin-right: 5px;
+}
+
+.inventory-table .action-buttons:hover {
+    color: #0b507e;
+}
+
+.inventory-buttons.active {
+    background-color: #007bff;
+    color: white;
+}
+
+
+.inventory-table th, .inventory-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.inventory-table th {
+    background-color: #3498db;
+    color: white;
+}
+
+.inventory-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.inventory-table td.description-container {
+    max-height: 100px; /* Limit the vertical height */
+    overflow-y: auto;  /* Enable vertical scrolling */
+    padding: 8px; /* Optional: Padding for better spacing */
+    background-color: #ffffff; /* Optional: Consistent background color */
+}
+
+.inventory-table td.description {
+    white-space: normal; /* Allow text to wrap if needed */
+}
+
+
+/* Button Styles */
+.inventory-buttons {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    background-color: #3498db; /* Blue color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.inventory-buttons:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+.inventory-buttons:active {
+    background-color: #1d6f99; /* Even darker blue when clicked */
+    transform: scale(0.98); /* Slight shrink effect when pressed */
+}
+
+.inventory-buttons:focus {
+    outline: none; /* Remove the focus outline */
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.5); /* Add focus outline when clicked */
+}
+
+#biddingProductsTable {
+    display: none;
+}
+
+
+.add-product-btn {
+    padding: 10px 20px;
+    background-color: var(--inv-primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-product-btn:hover {
+    background-color: #2980b9;
+}
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.popup-overlay.show {
+    display: flex;
+    opacity: 1;
+}
+
+.popup-content {
+    background: white;
+    width: 600px;
+    max-width: 95%;
+    max-height: 90%;
+    overflow-y: auto;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transform: scale(0.7);
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.popup-overlay.show .popup-content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #888;
+}
+
+.form-section {
+    margin-bottom: 15px;
+}
+
+.form-section label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-section input, 
+.form-section select, 
+.form-section textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--inv-border-color);
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+.form-section input:focus, 
+.form-section select:focus, 
+.form-section textarea:focus {
+    outline: none;
+    border-color: var(--inv-primary-color);
+}
+
+.product-type-selector {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.product-type-btn {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid var(--inv-border-color);
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.product-type-btn.active {
+    background-color: var(--inv-primary-color);
+    color: white;
+}
+
+.product-type-btn:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.product-type-btn:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.image-upload {
+    border: 2px dashed var(--inv-border-color);
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.image-upload input[type="file"] {
+    display: none;
+}
+
+
+.image-preview-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.image-preview {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border: 1px solid var(--inv-border-color);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.image-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-preview .remove-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.image-upload.dragging {
+    background-color: rgba(52, 152, 219, 0.1);
+    border-color: var(--inv-primary-color);
+}
+
+
+
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--inv-secondary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #27ae60;
+}
+
+.inventory-buttons.active {
+    background-color: #007bff;
+    color: white;
+}
+
+
+
+
+.success-message {
+    position: fixed;
+    bottom: -80px; /* Start off-screen */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #11942f; /* Green for success */
+    color: white;
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 10px;
+    visibility: hidden; /* Hidden by default */
+    opacity: 0; /* Start as invisible */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    text-align: center;
+    transition: opacity 0.5s ease, bottom 0.5s ease, visibility 0s 0.5s; /* Smooth transition */
+}
+
+/* Show the success message with smooth transition */
+.success-message.show {
+    visibility: visible; /* Make it visible */
+    opacity: 1; /* Make it fully visible */
+    bottom: 30px; /* Slide up to 30px from the bottom */
+    transition: opacity 0.5s ease, bottom 0.5s ease, visibility 0s 0s; /* Smooth transition */
+}
+
+/* Optional: Animation to fade out the success message after a few seconds */
+.success-message.hide {
+    opacity: 0;
+    bottom: -80px; /* Slide back off-screen */
+    transition: opacity 0.5s ease, bottom 0.5s ease; /* Smooth slide-out */
+}

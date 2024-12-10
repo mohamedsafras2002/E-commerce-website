@@ -1,0 +1,612 @@
+/* General Modal Styling */
+.modal {
+    display: flex;
+    position: fixed;
+    z-index: 1000; /* Ensure modal is above the background */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7); /* Dim background */
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0s 0.3s;
+}
+
+
+/* Modal Content */
+.modal-content {
+    background: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    max-width: 1100px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Show the modal with smooth transition */
+.modal.show {
+    visibility: visible; /* Make modal visible */
+    opacity: 1; /* Make modal fully visible */
+    transition: opacity 0.3s ease, visibility 0s 0s; /* Smooth fade-in */
+}
+
+.modal.show .modal-content {
+    opacity: 1; /* Make content fully visible */
+    transform: translateY(0); /* Slide content into view */
+}
+
+/* Hide the modal with smooth transition */
+.modal.hide {
+    opacity: 0; /* Fade out modal */
+    visibility: hidden; /* Hide modal */
+    transition: opacity 0.3s ease, visibility 0s 0.3s; /* Fade out and hide after */
+}
+
+.modal.hide .modal-content {
+    opacity: 0; /* Fade out content */
+    transform: translateY(-50px); /* Slide content out */
+}
+
+
+/* Close Button */
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.8rem;
+    color: #000000;
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 0.3s;
+    z-index: 1100; /* Ensure close button is above other content */
+}
+
+
+.close-button:hover {
+    color: #f00;
+}
+
+/* Modal Body */
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow-y: auto;
+}
+
+.modal-product-details {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    flex-wrap: wrap;
+    width: 100%;
+    /* overflow: auto; */
+}
+
+
+
+/* Left Section - Product Image */
+.modal-left {
+    flex: 1;
+    max-width: 50%; /* Adjusted width for image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px; /* Added margin for spacing */
+}
+
+#carousel-container {
+    position: relative;
+    max-width: 520px;
+    max-height: 520px;
+    width: 100%;
+    height: 100%; /* Ensure the container has a fixed height */
+    overflow: hidden; /* Ensure cropped portions are hidden */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Slight shadow */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping */
+    transition: transform 0.5s ease;
+    align-items: center;
+    width: 100%; /* Full container width */
+    height: 100%; /* Full container height */
+}
+
+.carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crop image to fit the container */
+    border-radius: 15px; /* Rounded corners for images */
+}
+
+
+
+/* Carousel navigation buttons */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 15px;
+    font-size: 2rem; /* Larger icons */
+    border-radius: 50%;
+    z-index: 1000;
+    transition: background 0.3s ease;
+}
+
+.carousel-btn:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+#prev-btn {
+    left: 15px; /* More space from the left */
+}
+
+#next-btn {
+    right: 15px; /* More space from the right */
+}
+
+/* Right Section - Product Details */
+.modal-middle {
+    flex: 2;
+    max-width: 50%; /* Adjusted width for product details */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 20px; /* Margin for spacing */
+}
+
+.modal-middle h2 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+#modal-product-rating {
+    margin-top: 10px;
+}
+
+/* Rating Stars */
+#modal-product-rating .fa-star.checked {
+    color: orange;
+}
+
+#modal-product-rating .fa-star {
+    color: lightgray;
+}
+
+#modal-product-rating .review-count, #modal-product-rating .rating-point {
+    margin-left: 10px;
+    font-size: 1em;
+    color: #555;
+}
+
+
+/* .modal-middle .rating {
+    margin-bottom: 20px;
+} */
+
+.modal-middle .price {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between price elements */
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.modal-middle .price .bid-price-box {
+    display: flex; 
+    flex-direction: column;
+}
+
+#modal-discounted-price, #modal-bid-starting-price {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+#modal-original-price {
+    text-decoration: line-through;
+    color: #888;
+}
+
+#modal-discount-badge {
+    background: #27ae60;
+    color: #fff;
+    padding: 7px 15px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+#modal-highest-bid-price {
+    margin-bottom: 0;
+    margin-top: 20px;
+}
+
+/* Stock and Shipping Info */
+.modal-middle .stock-shipping, #modal-highest-bid-price {
+    /* margin-bottom: 20px; */
+    font-size: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+}
+
+/* Quantity Controller */
+.quantity-controller, .place-bid-price-controller {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.place-bid-price-controller .controller-box {
+    margin-bottom: 20px;
+}
+
+.quantity-controller button, .place-bid-price-controller button{
+    background: none;
+    /* color: #fff; */
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.quantity-controller button:hover, .place-bid-price-controller button:hover {
+    background: #3437f5;
+    color: white;
+}
+
+.quantity-controller input,  .place-bid-price-controller input{
+    width: 70px;
+    text-align: center;
+    font-size: 1rem;
+    margin: 0 15px;
+    border: none;
+    border-radius: 5px;
+    padding: 7px;
+}
+
+.place-bid-price-controller label {
+    font-weight: 600; 
+}
+
+
+
+.bid-ending-date-box {
+    margin-bottom: 10px;
+    
+}
+
+.bid-status-box, .bid-ending-date-box { 
+    font-weight: 600; 
+} 
+
+
+.bid-status-box > span, .bid-ending-date-box > span { 
+    font-weight: normal;
+}
+
+
+
+
+.modal-product-review {
+    margin-top: 20px;
+    padding: 15px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.modal-product-review h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+#reviews-container {
+    max-height: 200px;
+    overflow-y: auto;
+    padding: 10px 0;
+}
+
+.review-item {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #ccc;
+}
+
+.reviewer-name {
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.review-rating {
+    color: #f5c518;
+    margin-bottom: 5px;
+}
+
+.review-content {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* Scrollbar Styling */
+#reviews-container::-webkit-scrollbar {
+    width: 5px;
+}
+
+#reviews-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+#reviews-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-button {
+    flex: 1;
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #000000; /* Primary button color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+}
+
+.custom-button:hover {
+    background-color: #3437f5; /* Darker blue for hover effect */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.custom-buy-now {
+    background-color: #000000; /* Distinct red for Buy Now */
+    background: none;
+    border: 1px solid black;
+    color: black;
+}
+
+.custom-buy-now:hover {
+    background-color: #3437f5; /* Darker red for hover effect */
+    border: 1px solid #3437f5;
+    color: white;
+}
+
+
+
+/* Order Confirmation Modal Styling */
+.order-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7); /* Dim background */
+    justify-content: center; /* Align content to the center */
+    align-items: center;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.order-modal.show {
+    display: flex; /* Flex to align content */
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease-in-out;
+
+}
+/* Modal Content */
+.order-modal .modal-content {
+    background: #fff;
+    border-radius: 15px; /* Rounded corners */
+    padding: 30px; /* Spacious padding */
+    max-width: 600px; /* Fixed width for order confirmation modal */
+    width: 90%;
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.4s ease-out;
+    height: auto; /* Adjust height based on content */
+}
+
+/* Hide modal content when modal is not visible */
+.order-modal:not(.show) .modal-content {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px); /* Slight slide-down for animation */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Header */
+.order-modal h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Information Section */
+.order-modal p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #333;
+}
+
+.order-modal p strong {
+    font-weight: bold;
+}
+
+/* Quantity, Price, Shipping, and Total Info */
+#modal-quantity-info,
+#modal-price-info,
+#modal-shipping-fee-info,
+#modal-total-info {
+    font-size: 1.2rem;
+    color: #555;
+    font-weight: normal;
+}
+
+/* Confirm and Cancel Buttons */
+.confirm-button,
+.cancel-button {
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* Confirm Order Button Styling */
+.confirm-button {
+    background-color: #27ae60; /* Green for confirmation */
+    color: #fff;
+}
+
+.confirm-button:hover {
+    background-color: #2ecc71; /* Lighter green on hover */
+    transform: scale(1.05);
+}
+
+/* Cancel Button Styling */
+.cancel-button {
+    background-color: #e74c3c; /* Red for cancel */
+    color: #fff;
+    margin-top: 10px;
+}
+
+.cancel-button:hover {
+    background-color: #c0392b; /* Darker red on hover */
+    transform: scale(1.05);
+}
+
+
+/* Success Message Popup */
+/* Success Message Popup */
+.success-message {
+    position: fixed;
+    bottom: -80px; /* Start off-screen */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #11942f; /* Green for success */
+    color: white;
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 10px;
+    visibility: hidden; /* Hidden by default */
+    opacity: 0; /* Start as invisible */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    text-align: center;
+    transition: opacity 0.5s ease, bottom 0.5s ease, visibility 0s 0.5s; /* Smooth transition */
+}
+
+/* Show the success message with smooth transition */
+.success-message.show {
+    visibility: visible; /* Make it visible */
+    opacity: 1; /* Make it fully visible */
+    bottom: 30px; /* Slide up to 30px from the bottom */
+    transition: opacity 0.5s ease, bottom 0.5s ease, visibility 0s 0s; /* Smooth transition */
+}
+
+/* Optional: Animation to fade out the success message after a few seconds */
+.success-message.hide {
+    opacity: 0;
+    bottom: -80px; /* Slide back off-screen */
+    transition: opacity 0.5s ease, bottom 0.5s ease; /* Smooth slide-out */
+}
+
+
+
+
+
+
+
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .modal-content {
+        flex-direction: column;
+        max-width: 95%;
+    }
+
+    .modal-body {
+        flex-direction: column;
+    }
+
+    .modal-left {
+        max-width: 100%;
+        margin-bottom: 30px; /* Margin below image */
+    }
+
+    .modal-middle {
+        max-width: 100%;
+    }
+
+    .order-modal .modal-content {
+        width: 90%; /* Make modal smaller on smaller screens */
+        padding: 20px;
+    }
+
+    .order-modal p {
+        font-size: 1rem;
+    }
+
+    .confirm-button,
+    .cancel-button {
+        font-size: 1rem;
+        width: 100%; /* Full-width buttons on small screens */
+    }
+}

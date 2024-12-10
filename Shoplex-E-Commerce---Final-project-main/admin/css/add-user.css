@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fc;
+    margin: 0;
+    padding: 0;
+}
+
+.form-container {
+ width: 600px;
+    margin: 50px auto;
+    padding: 25px;
+    background: linear-gradient(135deg, #ffffff, #f9f9f9); /* Soft gradient for a modern look */
+    border-radius: 15px; /* More rounded corners for a sleek design */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow for depth */
+    text-align: center;
+    border: 1px solid #ddd; /* Light border for a defined box */
+
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #2c3e50; /* Darker color for better readability */
+    font-weight: bold;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    font-size: 14px;
+    color: #34495e; /* Slightly darker for clear contrast */
+    display: block;
+    margin-bottom: 8px; /* Extra space for better spacing */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select,
+input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Rounded edges */
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fafafa; /* Light background for fields */
+}
+
+input:focus {
+    border-color: #3498db;
+    box-shadow: 0px 0px 5px rgba(52, 152, 219, 0.5); /* Subtle glow effect */
+}
+
+button.submit-btn {
+    background: linear-gradient(135deg, #3498db, #2980b9); /* Gradient button */
+    color: white;
+    padding: 12px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-weight: bold;
+}
+
+button.submit-btn:hover {
+    background: linear-gradient(135deg, #2980b9, #1a6ba0); /* Darker gradient on hover */
+    transform: scale(1.05);
+}
+
+a.back-btn {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #3498db;
+    font-weight: bold;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+a.back-btn:hover {
+    text-decoration: underline;
+    color: #2980b9;
+}
+
+/* Error Message Styles */
+.error-msg {
+    color: #e74c3c; /* Red for error */
+    font-size: 12px;
+    margin-top: 5px;
+    display: block;
+    text-align: left;
+}
+
+/* Optional: Add focus effect for better UX */
+input:focus + .error-msg {
+    font-weight: bold;
+    opacity: 0.8;
+}

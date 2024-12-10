@@ -1,0 +1,405 @@
+
+
+* {
+    font-family: Nunito, Segoe UI;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    
+}
+
+body {
+    /* width: 100vw; */
+    height: 100vh;
+    /* overflow: hidden; */
+}
+
+.box {
+    background-color: rgb(255, 255, 255);
+    padding: 50px 50px;
+    height: 100%;   
+}
+
+.main-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+    padding: 50px 50px;
+    /* height: 100%; */
+}
+
+.logo-container {
+    display: flex;
+    justify-content: start;
+    width: 100%;
+    /* height: 100%; */
+}
+
+.logo-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-box .logo {
+    width: 255px;
+}
+
+.register-container, .signin-container {
+    width: 100%;
+    /* height: 100vh; */
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.register-box, .signin-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    color: rgb(0, 0, 0);
+    font-size: 40px;
+    font-weight: 300;
+    margin-bottom: 50px;
+    /* border-bottom: 2px solid rgb(51, 90, 2); */
+}
+
+label span img {
+    height: 35px;
+}
+
+.signin-box, .register-box {
+    width: 670px;
+    margin-bottom: 100px;
+    margin-top: 60px;
+}
+
+form .input-box {
+    height: 80px;
+    position: relative;
+}
+
+form .name-box, form .password-box {
+    display: flex;
+}
+
+form input {
+    width: 300px;
+    font-size: 17px;
+    color: rgb(29, 28, 28);
+    padding: 9px 6px;   
+    margin-bottom: 8px;
+    border-width: 0 0 1px 0;
+    border-color: rgb(29, 28, 28);
+    margin-right: 20px;
+    background: none;
+    transition: 0.15s;   
+}
+
+.input-box #lName, .input-box #cPassword, .input-box #email {
+    margin-right: 0;
+}
+
+.signin-box .input-box #password {
+    margin-right: 0;
+}
+
+.eye {
+    position: absolute;
+    left: 280px;
+    top: 10px;
+    color: rgb(180, 180, 180);
+}
+
+.eye:hover {
+    cursor: pointer;
+    color: rgb(33, 11, 94);
+}
+
+.message {
+    font-size: 11px;
+    color: red;
+    padding: 0px 6px;
+    margin: 0 0 20px 0;
+    word-wrap: normal;
+    
+}
+
+
+form input::placeholder {
+    color: rgb(179, 179, 179);
+}
+
+form input:hover {
+    border-color: rgb(102, 57, 228);
+}
+
+form input:focus {
+    outline: none;
+    border-color: rgb(102, 57, 228);
+    border-width: 0 0 1.8px 0;
+}
+
+.signin-btn, .register-btn {
+    font-size: 17px;
+    font-weight: 500;
+    padding: 10px 30px;
+    background-color: black;
+    color: white;
+    border-radius: 49px;
+    transition: 0.45s;
+    border: none;
+}
+
+.signin-btn:hover, .register-btn:hover {
+    opacity: 0.8;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.success-msg {
+    background-color: rgb(187, 240, 187);
+    display: inline-block;
+    color: green;
+    padding: 12px;
+    border: 1px solid green;
+    border-radius: 4px;
+}
+
+.popup {
+    visibility: hidden;
+    min-width: 250px;
+    background-color: #4CAF50; 
+    color: white;
+    text-align: center;
+    border-radius: 4px;
+    padding: 16px;
+    position: fixed;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%); 
+    z-index: 1;
+    font-size: 17px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition: opacity 0.5s, visibility 0.5s;
+}
+
+.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.signin-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    color: gray;
+    width: 260px;
+}
+
+.signin-text a {
+    text-decoration: none;
+    margin-left: 5px;
+    color: black;
+    font-weight: 500;
+    transition: 0.20s;
+}
+
+.signin-text a:hover {
+    font-weight: 600;
+}
+
+    /* 
+    .forget-psw  {
+        margin-top: 13px; 
+    }
+
+    .forget-psw a {
+        color: gray;
+        font-size: 16px;
+    }
+
+    .forget-psw a:hover {
+        color: black;
+        font-weight: 500;
+    }
+
+    .remember-box {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        margin-bottom: 10px;
+    }
+
+    .remember-box input {
+        display: flex;
+        justify-content:start;
+        width: 15px;
+        height: 15px;
+        margin: 0;
+        margin-right: 10px;
+
+    }
+
+    .remember-box p {
+        display: flex;   
+        margin: 0;
+    } */
+
+.rights {
+    font-size: 0.8rem;
+    color: lightgray;
+}
+
+@media (max-width: 768px) {
+    .box {
+        padding: 40px; 
+    }
+
+
+    form input::placeholder {
+        font-size: 13px;
+    }
+
+    .logo-box .logo {
+        width: 130px; 
+    }
+
+    .register-container, .signin-container {
+        height: auto; 
+        margin-top: 20px; 
+        align-items: center;
+    }
+
+    .register-box, .signin-box {
+        width: 100%; 
+        max-width: 500px; 
+    }
+
+    label {
+        font-size: 32px; 
+        margin-bottom: 30px; 
+    }
+
+    form input {
+        width: 100%; 
+        font-size: 15px; 
+        padding: 8px; 
+    }
+
+    form .input-box {
+        height: 70px;
+    }
+
+    .eye {
+        left: 100%; 
+        transform: translateX(-100%); 
+    }
+
+    .signin-btn, .register-btn {
+        font-size: 15px;
+        padding: 8px 20px; 
+    }
+
+    .message {
+        font-size: 9px; 
+    }
+
+    .signin-text {
+        width: 100%; 
+        font-size: 14px; 
+    }
+
+    .name-box {
+        flex-direction: column;
+    }
+
+    .password-box {
+        flex-direction: column;
+    }
+
+    button {
+        font-size: 13px;
+    }
+
+}
+
+
+@media (max-width: 400px) {
+    .box {
+        padding: 35px; 
+    }
+
+    form input::placeholder {
+        font-size: 11px;
+    }
+
+    .logo-box .logo {
+        width: 100px; 
+    }
+
+    .register-container, .signin-container {
+        height: auto; 
+        margin-top: 10px; 
+        align-items: center;
+    }
+
+    form .input-box {
+        height: 60px;
+    }
+
+    .register-box, .signin-box {
+        width: 95%; 
+        max-width: none; 
+    }
+
+    label {
+        font-size: 24px; 
+        margin-bottom: 20px; 
+    }
+
+    form input {
+        width: 100%; 
+        font-size: 14px; 
+        padding: 6px; 
+    }
+
+    .eye {
+        left: 100%; 
+        height: 10px;
+        transform: translateX(-100%); 
+    }
+
+    .signin-btn, .register-btn {
+        font-size: 14px; 
+        padding: 6px 15px; 
+    }
+
+    .message {
+        font-size: 9px; 
+    }
+
+    .signin-text {
+        width: 100%; 
+        font-size: 12px; 
+    }
+
+    button {
+        font-size: 10px;
+    }
+}

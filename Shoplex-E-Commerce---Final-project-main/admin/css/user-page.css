@@ -1,0 +1,172 @@
+/* Container for the search bar and "Add User" button */
+.header-container {
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Search bar styling */
+.search-container {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.search-container input {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.search-container button {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #1596a4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.search-container button:hover {
+    background-color: #09425e;
+}
+
+/* Add User Button - Positioned to the top right */
+.add-user-btn-container {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+}
+
+.add-user-btn {
+    padding: 12px 20px;
+    background-color: #0e0c23;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.add-user-btn:hover {
+    opacity: 0.9;
+}
+
+/* Card container styling */
+.user-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 100px;
+    margin-left: 50px;
+}
+
+/* Individual user card styling */
+.user-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+    width: 350px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.user-card:hover {
+    transform: scale(1.08);
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* User card header styling */
+.user-card-header img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+
+.user-card-header h3 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+/* User card body styling */
+.user-card-body p {
+    margin: 8px 0;
+    font-size: 16px;
+    color: #666;
+}
+
+/* User card actions */
+.user-card-actions a {
+    display: inline-block;
+    margin: 12px 8px;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 6px;
+    color: #fff;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.user-card-actions .edit-btn {
+    background-color: #0e0c23;
+}
+
+.user-card-actions .delete-btn {
+    background-color: #4f63e6;
+}
+
+.user-card-actions a:hover {
+    opacity: 0.9;
+}
+
+/* Heading styling */
+h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #333;
+    margin-top: 70px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+}
+
+/* Keyframes for fadeInUp animation */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Optional: Add a bottom border for emphasis */
+h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #28a745;
+    margin: 15px auto 0;
+}

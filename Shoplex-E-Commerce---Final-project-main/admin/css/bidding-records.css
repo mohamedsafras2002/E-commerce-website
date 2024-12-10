@@ -1,0 +1,233 @@
+:root {
+    --inv-primary-color: #3498db;
+    --inv-secondary-color: #2ecc71;
+    --inv-background-color: #f4f6f8;
+    --inv-text-color: #333;
+    --inv-border-color: #ddd;
+}
+
+
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #fff;
+}
+
+/* Header styles */
+.header {
+    background-color: #ffffff;
+    color: white;
+    padding: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    font-size: 24px;
+    color: black;
+}
+
+/* Inventory table styles */
+.inventory-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    margin-top: 20px;
+}
+
+.inventory-table .action-buttons {
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+    color: #3498db;
+    margin-right: 5px;
+}
+
+.inventory-table .action-buttons:hover {
+    color: #0b507e;
+}
+
+.inventory-buttons.active {
+    background-color: #007bff;
+    color: white;
+}
+
+
+.inventory-table th, .inventory-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.inventory-table th {
+    background-color: #3498db;
+    color: white;
+}
+
+.inventory-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.inventory-table td.description-container {
+    max-height: 100px; /* Limit the vertical height */
+    overflow-y: auto;  /* Enable vertical scrolling */
+    padding: 8px; /* Optional: Padding for better spacing */
+    background-color: #ffffff; /* Optional: Consistent background color */
+}
+
+.inventory-table td.description {
+    white-space: normal; /* Allow text to wrap if needed */
+}
+
+
+/* Button Styles */
+.inventory-buttons {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    background-color: #3498db; /* Blue color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.inventory-buttons:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+.inventory-buttons:active {
+    background-color: #1d6f99; /* Even darker blue when clicked */
+    transform: scale(0.98); /* Slight shrink effect when pressed */
+}
+
+.inventory-buttons:focus {
+    outline: none; /* Remove the focus outline */
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.5); /* Add focus outline when clicked */
+}
+
+#biddingProductsTable {
+    display: none;
+}
+
+
+.add-product-btn {
+    padding: 10px 20px;
+    background-color: var(--inv-primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-product-btn:hover {
+    background-color: #2980b9;
+}
+
+
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* Popup content container */
+.popup-content {
+    background-color: #ffffff; /* White background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    width: 90%;
+    max-width: 700px; /* Maximum width for the table */
+    padding: 20px;
+    position: relative; /* To position the close button */
+    animation: popup-appear 0.3s ease-in-out; /* Smooth appearance animation */
+    overflow-x: auto; /* Enable horizontal scrolling if content overflows */
+}
+
+/* Close button styles */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #555;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #000; /* Darker color on hover */
+}
+
+/* Table container styles */
+.popup-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Table header styles */
+.popup-content table thead th {
+    background-color: var(--inv-primary-color);
+    color: white;
+    padding: 10px;
+    text-align: left;
+    border: 1px solid var(--inv-border-color);
+    font-size: 16px;
+}
+
+/* Table row styles */
+.popup-content table tbody tr {
+    border-bottom: 1px solid var(--inv-border-color);
+    background-color: #fff; /* Default row color */
+}
+
+.popup-content table tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Alternating row colors */
+}
+
+/* Table cell styles */
+.popup-content table td {
+    padding: 10px;
+    text-align: left;
+    color: var(--inv-text-color);
+    font-size: 14px;
+    border: 1px solid var(--inv-border-color);
+    word-wrap: break-word; /* Prevent overflow */
+}
+
+/* No data row style */
+.popup-content table td[colspan] {
+    text-align: center;
+    color: #888; /* Lighter text for "No data found" */
+    font-style: italic;
+}
+
+/* Smooth popup animation */
+@keyframes popup-appear {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

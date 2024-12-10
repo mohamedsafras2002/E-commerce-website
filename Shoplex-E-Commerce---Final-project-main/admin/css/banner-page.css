@@ -1,0 +1,207 @@
+:root {
+    --inv-primary-color: #3498db;
+    --inv-secondary-color: #2ecc71;
+    --inv-background-color: #f4f6f8;
+    --inv-text-color: #333;
+    --inv-border-color: #ddd;
+}
+
+
+/* Main Content */
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+}
+
+.alert {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.alert-success {
+    background-color: #28a745;
+    color: white;
+}
+
+.alert-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+.upload-banner {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.upload-banner h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.upload-banner input[type="file"] {
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.upload-banner button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.upload-banner button:hover {
+    background-color: #2980b9;
+}
+
+/* Banner List */
+.banner-list {
+    margin-top: 30px;
+}
+
+.banner-list table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.banner-list th, .banner-list td {
+    padding: 15px;
+    text-align: left;
+    font-size: 16px;
+}
+
+.banner-list th {
+    background-color: #3498db;
+    color: white;
+}
+
+.banner-list td {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.banner-list tr:hover {
+    background-color: #f7f7f7;
+}
+
+.banner-thumbnail {
+    width: 100px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.delete-btn, .toggle-status-btn {
+    text-decoration: none;
+    color: #e74c3c;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.delete-btn:hover, .toggle-status-btn:hover {
+    background-color: #ecf0f1;
+    color: #c0392b;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+        padding-top: 15px;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 15px;
+    }
+
+    .sidebar-nav a {
+        font-size: 14px;
+    }
+
+    .banner-list th, .banner-list td {
+        font-size: 14px;
+    }
+
+    .banner-thumbnail {
+        width: 80px;
+    }
+
+    .upload-banner {
+        margin-top: 20px;
+    }
+}
+
+/* Modal and Popup (for better control of forms) */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    text-align: center;
+}
+
+.popup-content .close-btn {
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.popup-content h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.popup-content textarea {
+    width: 100%;
+    height: 150px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 10px;
+}
+
+.popup-content button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.popup-content button:hover {
+    background-color: #2980b9;
+}
