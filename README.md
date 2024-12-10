@@ -2,7 +2,7 @@
 A repository for developing an e-commerce website. It includes features like user authentication, product listing, shopping cart, and secure checkout. Built using HTML, CSS, PHP, and MySQL.
 
 # eCommarceWebsite
-This is an e-commerce website project built using HTML, CSS, PHP, and MySQL.
+This is an e-commerce website project built using HTML, CSS, PHP,java script and MySQL.
 
 ## Features
 - User Authentication
